@@ -1,0 +1,50 @@
+#
+# Canonical configuration for README.md (cloudposse-style doc standard,
+# native to Devotica). Run `make readme` to regenerate the terraform-docs
+# section of README.md.
+#
+
+name: terraform-aws-dynamodb
+license: APACHE2
+github_repo: devotica-labs/terraform-aws-dynamodb
+
+badges:
+  - name: CI
+    image: https://github.com/devotica-labs/terraform-aws-dynamodb/actions/workflows/ci.yml/badge.svg
+    url: https://github.com/devotica-labs/terraform-aws-dynamodb/actions/workflows/ci.yml
+  - name: Release
+    image: https://github.com/devotica-labs/terraform-aws-dynamodb/actions/workflows/release.yml/badge.svg
+    url: https://github.com/devotica-labs/terraform-aws-dynamodb/actions/workflows/release.yml
+  - name: License
+    image: https://img.shields.io/badge/License-Apache_2.0-blue.svg
+    url: LICENSE
+
+related:
+  - name: terraform-aws-kms
+    description: Customer-managed KMS key to pass into kms_key_arn for CMK encryption.
+    url: https://github.com/devotica-labs/terraform-aws-kms
+  - name: terraform-aws-vpc
+    description: Provisions the DynamoDB gateway endpoint so table traffic stays on the AWS network.
+    url: https://github.com/devotica-labs/terraform-aws-vpc
+
+description: |-
+  Terraform module for a single **Amazon DynamoDB** table — the fully managed,
+  serverless key-value / document store. Ships a fintech baseline: on-demand
+  (PAY_PER_REQUEST) billing, server-side encryption, point-in-time recovery,
+  and deletion protection, with focused inputs for global secondary indexes,
+  TTL expiry, and change streams.
+
+introduction: |-
+  This module creates an [Amazon DynamoDB table](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html)
+  with opinionated, fintech-safe defaults. Rather than a pass-arbitrary-config
+  engine, it exposes focused inputs for the pieces that matter: key schema and
+  attributes, billing mode, global secondary indexes, TTL, streams, and
+  customer-managed encryption. Encryption, point-in-time recovery, and deletion
+  protection are on by default.
+
+usage: |-
+  See [`examples/complete`](examples/complete) for the full surface (composite
+  key, GSI, TTL, streams, CMK) and [`examples/basic`](examples/basic) for a
+  hash-key-only table on the fintech defaults.
+
+contributors: []
